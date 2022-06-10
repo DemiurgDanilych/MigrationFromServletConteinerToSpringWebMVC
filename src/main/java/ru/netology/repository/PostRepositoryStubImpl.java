@@ -25,9 +25,6 @@ public class PostRepositoryStubImpl implements PostRepository {
 
 
     public List<Post> all() {
-        if (repository.isEmpty()) {
-            throw new NotFoundException("Repository is empty");
-        }
         return repository.values().stream()
                 .filter(Objects::nonNull)
                 .filter(post -> !post.isRemoved())
